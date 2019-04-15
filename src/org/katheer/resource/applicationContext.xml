@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="emp1" class="org.katheer.bean.Employee" p:ename="Abdul Katheer" p:eid="E101"
+          p:eaddr="Dindigul">
+        <property name="acc">
+            <bean class="org.katheer.bean.Account" p:accNo="A101" p:bank="IOB"
+                  p:branch="DGL" p:balance="7680000"/>
+        </property>
+    </bean>
+
+    <bean id="acc2" class="org.katheer.bean.Account">
+        <property name="accNo" value="A101"/>
+        <property name="bank" value="ICICI"/>
+        <property name="branch" value="Cuddalore"/>
+        <property name="balance" value="892912"/>
+    </bean>
+    <bean id="emp2" class="org.katheer.bean.Employee" p:ename="Dhanalakshmi" p:eid="E102" p:eaddr="Cuddalore"
+            p:acc-ref="acc2"/>
+</beans>
